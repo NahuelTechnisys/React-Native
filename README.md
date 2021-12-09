@@ -1,0 +1,1 @@
+App que le permite a los usuarios de Argentina subir noticias a la plataforma para ser visualizada por demás ususarios.
