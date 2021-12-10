@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import { NewsListItem } from "../NewsListItem/NewsListItem";
+import { StatusBar } from 'expo-status-bar';
 
 export const NewsList = () => {
 
@@ -14,18 +15,21 @@ export const NewsList = () => {
         );
 
     return (
-        <FlatList style={listStyles.container}
-            
-            //Infomación de la lista
-            data={list}
+        <>
+            <FlatList style={listStyles.container}
+                
+                //Infomación de la lista
+                data={list}
 
-            //Renderizado
-            renderItem={data => ( <NewsListItem data={data} /> )}
+                //Renderizado
+                renderItem={data => ( <NewsListItem data={data} /> )}
 
-            //Key
-            keyExtractor={(item) => item.id}
-        />
-            
+                //Key
+                keyExtractor={(item) => item.id}
+            />
+                
+            {/* <StatusBar style="auto" /> */}
+        </>
     );
 }
 
