@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextInput, View, Button, Text, StyleSheet } from "react-native";
+import Colors from '../../constants/Colors';
 
 export const LogIn = props => {
     
@@ -45,12 +46,13 @@ const LogInStyle = StyleSheet.create({
         paddingBottom: 10,
         paddingRight: 0,
         paddingLeft: 0,
-        backgroundColor: '#bbb5',
+        backgroundColor: Colors.cards,
         alignItems: 'center',
         justifyContent: 'center',
     },
     appTitle: {
-        //
+        fontWeight: 'bold',
+        color: Colors.font
     },
     inputArea: {
         alignSelf: 'center',
@@ -58,14 +60,16 @@ const LogInStyle = StyleSheet.create({
         marginTop: 20
     },
     label:{
-        paddingLeft: 10
+        paddingLeft: 10,
+        fontWeight: 'bold',
+        color: Colors.font
     },
     input: {
         marginTop: 5,
         borderRadius: 20,
         width: '100%',
         padding: 10,
-        backgroundColor:'#eee'
+        backgroundColor:Colors.details
     },
     buttonsArea: {
         width:'90%',

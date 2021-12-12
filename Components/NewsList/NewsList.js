@@ -3,6 +3,7 @@ import { StyleSheet, FlatList } from "react-native";
 import { NewsListItem } from "../NewsListItem/NewsListItem";
 import { StatusBar } from 'expo-status-bar';
 
+
 export const NewsList = () => {
 
     const [list,setList] = useState(
@@ -35,6 +36,6 @@ export const NewsList = () => {
 
 const listStyles = StyleSheet.create({
     container: {
-        width:'95%'        
+        width:'100%'        
     }
 });

@@ -5,8 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 import { NewsList } from './Components/NewsList/NewsList';
 import { LogIn } from './Components/LogIn/LogIn';
 import { useState } from 'react/cjs/react.development';
+import Colors from './constants/Colors';
 
 export default function App() {
+
+console.log(Colors.background)
 
 const [allowed,setAlowed] = useState(false); //variable usada para permitir el paso si el usuario es valido
 const [user,setUser] = useState({user:'nahuel',pass:'123'}); //hardcodeado para poder probarlo
@@ -27,13 +30,15 @@ const handleLogIn = (userReceived, passReceived) => {
 
 }
 
+
 !allowed
   ? content = <LogIn onLogIn={handleLogIn}/>
   : content = <NewsList /> 
 
   return (
     <View style={styles.container}>
-      {content}
+      {/* {content} */}
+       <NewsList />{/* borrar */}
       {/* <StatusBar style="auto" /> */}
     </View>
   );
@@ -43,7 +48,7 @@ const handleLogIn = (userReceived, passReceived) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.background,
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },

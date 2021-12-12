@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import Colors from '../../constants/Colors';
 
 export const NewsListItem = ({data}) => {
 
@@ -10,8 +11,8 @@ export const NewsListItem = ({data}) => {
                 <Text style={listItemsStyles.image}>{data.item.image}</Text>
                 <Text style={listItemsStyles.date}>{data.item.date}</Text>
                 <View style={listItemsStyles.newFooter}>
-                    <Text>{data.item.author}</Text>
-                    <Text>{data.item.location}</Text>
+                    <Text style={listItemsStyles.author}>{data.item.author}</Text>
+                    <Text style={listItemsStyles.location}>{data.item.location}</Text>
                 </View>
             </View>
         </View>
@@ -20,10 +21,14 @@ export const NewsListItem = ({data}) => {
 
 const listItemsStyles = StyleSheet.create({
     listItem: {
-        margin: 20,
-        backgroundColor: '#aaa4'
+        width: '90%',
+        marginTop: 20,
+        alignSelf: 'center',
+        backgroundColor: Colors.cards,
+        borderRadius: 7
     },
     title: {
+        color: Colors.font,
         alignSelf: 'center',
         paddingTop: 15,
         paddingBottom: 15,
@@ -38,10 +43,11 @@ const listItemsStyles = StyleSheet.create({
         width: '100%',
         alignSelf: 'center',
         height: 150,
-        backgroundColor: '#aaa3'
+        backgroundColor: Colors.second_cards,
+        borderRadius: 7
     },
     date: {
-        color: '#999',
+        color: Colors.second_font,
         marginBottom: 20,
         alignSelf: 'flex-end'
     },
@@ -49,5 +55,11 @@ const listItemsStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 20
+    },
+    author: {
+        color: Colors.font
+    },
+    location: {
+        color: Colors.font
     }
 });
