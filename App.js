@@ -1,4 +1,5 @@
 import { StyleSheet, View } from 'react-native';
+import { useFonts } from 'expo-font';
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
@@ -9,10 +10,12 @@ import Colors from './constants/Colors';
 
 export default function App() {
 
-console.log(Colors.background)
-
 const [allowed,setAlowed] = useState(false); //variable usada para permitir el paso si el usuario es valido
 const [user,setUser] = useState({user:'nahuel',pass:'123'}); //hardcodeado para poder probarlo
+const[loaded] = useFonts({
+  Roboto_Black: require('./assets/fonts/Roboto-Black.ttf'),
+  Roboto_Bold: require('./assets/fonts/Roboto-Bold.ttf')
+})
 
 let content = null;
 
@@ -46,6 +49,7 @@ const handleLogIn = (userReceived, passReceived) => {
 
 const styles = StyleSheet.create({
   container: {
+    fontFamily:'Roboto_Black',
     flex: 1,
     backgroundColor: Colors.background,
     alignItems: 'center',
