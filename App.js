@@ -40,7 +40,8 @@ const handleLogIn = (userReceived, passReceived) => {
 
   return (
     <View style={styles.container}>
-      {content}
+      {/* {content} */}
+      <NewsList /> 
       {/* <StatusBar style="auto" /> */}
     </View>
   );

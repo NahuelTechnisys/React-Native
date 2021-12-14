@@ -1,20 +1,26 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 import Colors from '../../constants/Colors';
 
-export const NewsListItem = ({data}) => {
+export const NewsListItem = props => {
 
     return (
         <View style={listItemsStyles.listItem}>
-            <Text style={listItemsStyles.title}>{data.item.title}</Text>
+            <Text style={listItemsStyles.title}>{props.data.item.title}</Text>
             <View style={listItemsStyles.infoContainer}>
-                <Text style={listItemsStyles.image}>{data.item.image}</Text>
-                <Text style={listItemsStyles.date}>{data.item.date}</Text>
+                <Text style={listItemsStyles.image}>{props.data.item.image}</Text>
+                <Text style={listItemsStyles.date}>{props.data.item.date}</Text>
                 <View style={listItemsStyles.newFooter}>
-                    <Text style={listItemsStyles.author}>{data.item.author}</Text>
-                    <Text style={listItemsStyles.location}>{data.item.location}</Text>
+                    <Text style={listItemsStyles.author}>{props.data.item.author}</Text>
+                    <Text style={listItemsStyles.location}>{props.data.item.location}</Text>
                 </View>
             </View>
+            <View style={listItemsStyles.deleteBtnContainer} >
+                <Button title='Eliminar'
+                    onPress={() => props.Delete(props.data.item.id)}
+                /> 
+            </View>
+            
         </View>
     );
 }
@@ -61,5 +67,8 @@ const listItemsStyles = StyleSheet.create({
     },
     location: {
         color: Colors.font
-    }
+    },
+    deleteBtnContainer:{
+        width:'25%'
+    },
 });
